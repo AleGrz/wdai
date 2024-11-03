@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>alegrz</title>
+  <script
+    type="importmap"> { "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js", "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/" } } </script>
+  <script type="module" src="scripts/cursor.js"></script>
+  <script type="module" src="scripts/main.js"></script>
+  <link rel="stylesheet" href="styles/styles.css" />
+</head>
+
+<body>
+  <header>
+    <div>
+      <img src="images/logo.svg" />
+    </div>
+    <nav>
+      <div onclick="window.scroll({top: 0})" class="hoverable"></div>
+      <div onclick="window.scroll({top: 1000})" class="hoverable"></div>
+      <div onclick="window.scroll({top: 3000})" class="hoverable"></div>
+      <div onclick="window.scroll({top: 5400})" class="hoverable"></div>
+      <div onclick="window.scroll({top: 5500+document.querySelector('.pr').offsetHeight})" class="hoverable"></div>
+    </nav>
+    <div class="links">
+      <svg width="319" height="231" viewBox="0 0 319 231" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <a href="https://github.com" class="hoverable">
+          <path
+            d="M-8.07643e-06 0H230.638V142.482L319 230.97H93.3537H93.1237C88.7133 229.43 29.6917 168.517 -8.07643e-06 137.482V0Z"
+            fill="#B80F3C" />
+          <path
+            d="M130 149.333V136C130.464 131.824 129.266 127.634 126.667 124.333C136.667 124.333 146.667 117.667 146.667 106C146.933 101.833 145.767 97.7332 143.333 94.3332C144.267 90.4998 144.267 86.4998 143.333 82.6665C143.333 82.6665 140 82.6665 133.333 87.6665C124.533 85.9998 115.467 85.9998 106.667 87.6665C100 82.6665 96.6666 82.6665 96.6666 82.6665C95.6666 86.4998 95.6666 90.4998 96.6666 94.3332C94.2395 97.7194 93.0615 101.842 93.3333 106C93.3333 117.667 103.333 124.333 113.333 124.333C112.033 125.967 111.067 127.833 110.5 129.833C109.933 131.833 109.767 133.933 110 136M110 136V149.333M110 136C94.9666 142.667 93.3333 129.333 86.6666 129.333"
+            stroke="#100612" stroke-width="6.66667" stroke-linecap="round" stroke-linejoin="round" />
+        </a>
+      </svg>
+
+      <svg width="319" height="231" viewBox="0 0 319 231" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <a href="https://linkedin.com" class="hoverable">
+          <path
+            d="M-8.07643e-06 0H230.638V142.482L319 230.97H93.3537H93.1237C88.7133 229.43 29.6917 168.517 -8.07643e-06 137.482V0Z"
+            fill="#B80F3C" />
+          <path
+            d="M143.333 102.667C148.638 102.667 153.725 104.774 157.475 108.524C161.226 112.275 163.333 117.362 163.333 122.667V146H150V122.667C150 120.898 149.298 119.203 148.047 117.952C146.797 116.702 145.101 116 143.333 116C141.565 116 139.869 116.702 138.619 117.952C137.369 119.203 136.667 120.898 136.667 122.667V146H123.333V122.667C123.333 117.362 125.44 112.275 129.191 108.524C132.942 104.774 138.029 102.667 143.333 102.667Z"
+            stroke="#100612" stroke-width="6.66667" stroke-linecap="round" stroke-linejoin="round" />
+          <path d="M110 106H96.6666V146H110V106Z" stroke="#100612" stroke-width="6.66667" stroke-linecap="round"
+            stroke-linejoin="round" />
+          <path
+            d="M103.333 95.9998C107.015 95.9998 110 93.0151 110 89.3332C110 85.6513 107.015 82.6665 103.333 82.6665C99.6514 82.6665 96.6666 85.6513 96.6666 89.3332C96.6666 93.0151 99.6514 95.9998 103.333 95.9998Z"
+            stroke="#100612" stroke-width="6.66667" stroke-linecap="round" stroke-linejoin="round" />
+        </a>
+      </svg>
+      <svg width="231" height="231" viewBox="0 0 231 231" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <a href="https://instagram.com" class="hoverable">
+          <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M0 0H231V230.97H93.5H93.2696C88.8524 229.43 29.7383 168.517 0 137.482V0Z" fill="#B80F3C" />
+          <path
+            d="M137.333 97.6665H137.367M102.333 82.6665H135.667C144.871 82.6665 152.333 90.1284 152.333 99.3332V132.667C152.333 141.871 144.871 149.333 135.667 149.333H102.333C93.1285 149.333 85.6666 141.871 85.6666 132.667V99.3332C85.6666 90.1284 93.1285 82.6665 102.333 82.6665ZM132.333 113.9C132.745 116.674 132.271 119.507 130.979 121.997C129.687 124.486 127.644 126.505 125.139 127.765C122.634 129.026 119.795 129.465 117.026 129.02C114.257 128.574 111.699 127.267 109.716 125.284C107.733 123.301 106.426 120.743 105.98 117.974C105.535 115.205 105.974 112.366 107.234 109.861C108.495 107.356 110.514 105.312 113.003 104.021C115.493 102.729 118.326 102.255 121.1 102.667C123.93 103.086 126.549 104.405 128.572 106.428C130.595 108.45 131.914 111.07 132.333 113.9Z"
+            stroke="#100612" stroke-width="6.66667" stroke-linecap="round" stroke-linejoin="round" />
+        </a>
+      </svg>
+    </div>
+    <div class="mobile-menu hoverable" onclick="document.querySelector('.mobile-overlay').style.display='flex'; 
+      document.body.style.overflow='hidden';">
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+    </div>
+  </header>
+  <div class="mobile-overlay">
+    <a onclick="document.querySelector('.mobile-overlay').style.display='none'; document.body.style.overflow='auto'; window.scroll({top: 0})"
+      class="hoverable animated">Home</a>
+    <a onclick="document.querySelector('.mobile-overlay').style.display='none'; document.body.style.overflow='auto'; window.scroll({top: 1000})"
+      class="hoverable animated">Introduction</a>
+    <a onclick="document.querySelector('.mobile-overlay').style.display='none'; document.body.style.overflow='auto'; window.scroll({top: 3000})"
+      class="hoverable animated">About</a>
+    <a onclick="document.querySelector('.mobile-overlay').style.display='none'; document.body.style.overflow='auto'; window.scroll({top: 5400})"
+      class="hoverable animated">Projects</a>
+    <a onclick="document.querySelector('.mobile-overlay').style.display='none'; document.body.style.overflow='auto'; window.scroll({top: 5500+document.querySelector('.pr').offsetHeight})"
+      class="hoverable animated">Contact</a>
+    <div onclick="document.querySelector('.mobile-overlay').style.display='none'; document.body.style.overflow='auto';"
+      class="hoverable">
+      <div class="line"></div>
+      <div class="line"></div>
+    </div>
+  </div>
+  <div class="transition"></div>
+  <div class="cursor">
+  </div>
+
+
+  <main id="home">
+    <div class="animated-background">
+      <div class="grad"></div>
+      <div class="text"></div>
+    </div>
+    <div>
+      <img class="profile" src="images/pfp.png"></img>
+    </div>
+    <div class="parallax" value="1" style="-webkit-text-stroke-color: #B80F3C; z-index: 153;">alegrz</div>
+    <div class="parallax" value="3" style="-webkit-text-stroke-color: #750C28; z-index: 152;">alegrz</div>
+    <div class="parallax" value="5" style="-webkit-text-stroke-color: #310915; z-index: 151;">alegrz</div>
+  </main>
+
+  <main id="planet">
+    <canvas id="p"></canvas>
+    <section class="title">
+      <div class="sub animated">Hello! My name is</div>
+      <div class="scroll" id="toleft"><span style="-webkit-text-stroke: 3px #b80f3c">ale</span>ksander</div>
+      <div class="scroll" id="toright"><span style="-webkit-text-stroke: 3px #b80f3c">grz</span>ybek</div>
+    </section>
+  </main>
+
+  <main id="agh">
+    <div class="animated-background">
+      <div class="grad"></div>
+      <div class="text"></div>
+    </div>
+    <canvas id="a"> </canvas>
+    <div class="gradient-over"></div>
+    <section id="o1">
+      <div class="message animated">
+        I'm currently studying Computer Science at AGH University of Science and
+        Technology in Krakow, Poland.
+      </div>
+      <div class="arrow tall">
+        <div></div>
+      </div>
+    </section>
+    <section id="o2">
+      <div class="message animated">
+        I am passionate about many areas of computer science, such as machine
+        learning, cybersecurity and game development.
+      </div>
+      <div class="arrow short">
+        <div></div>
+      </div>
+    </section>
+  </main>
+  <main id="projects">
+    <section class="container pr">
+      <article class="project" data-active="0">
+        <div class="resizable">
+          <div>
+            <video autoplay loop muted>
+              <source src="video/1.mp4" type="video/mp4" />
+            </video>
+          </div>
+          <span class="video-overlay"></span>
+          <div class="content">
+            An innovative desktop management solution designed to streamline and
+            enhance user productivity. The project focuses on creating a dynamic,
+            customizable workspace that integrates with various cloud services,
+            applications, and virtual environments. reDesktop offers users the
+            ability to organize their workflow through intuitive drag-and-drop
+            functionality, personalized widgets, and seamless multitasking features.
+          </div>
+
+        </div>
+        <figure class="banner">
+          <img src="images/project-banner.svg"></img>
+          <figcaption class="number">01</figcaption>
+          <figcaption class="project-title">reDesktop</figcaption>
+        </figure>
+      </article>
+      <article class="project" data-active="0">
+        <div class="resizable">
+          <div>
+            <video autoplay loop muted>
+              <source src="video/2.mp4" type="video/mp4" />
+            </video>
+          </div>
+          <span class="video-overlay"></span>
+          <div class="content">
+            Brute Force is a fast-paced strategic card game where players assume the
+            roles of powerful warriors and tacticians, battling head-to-head in a
+            contest of strength, skill, and cunning. The game revolves around
+            building a deck filled with various attack, defense, and special ability
+            cards, allowing players to unleash devastating combos or cleverly
+            outmaneuver their opponents.
+          </div>
+        </div>
+        <figure class="banner">
+          <img src="images/project-banner.svg"></img>
+          <figcaption class="number">02</figcaption>
+          <figcaption class="project-title">Brute Force</figcaption>
+        </figure>
+      </article>
+      <article class="project" data-active="0">
+        <div class="resizable">
+          <div>
+            <video autoplay loop muted>
+              <source src="video/3.mp4" type="video/mp4" />
+            </video>
+          </div>
+          <span class="video-overlay"></span>
+          <div class="content">
+            A portfolio website is a personal online platform designed to showcase
+            an individual’s professional skills, achievements, and work samples.
+            Typically used by creative professionals like designers, artists,
+            writers, developers, and photographers, a portfolio website serves as a
+            digital resume that highlights one’s expertise and projects. It often
+            features a sleek, user-friendly design that reflects the individual's
+            style.
+          </div>
+
+        </div>
+        <figure class="banner">
+          <img src="images/project-banner.svg"></img>
+          <figcaption class="number">03</figcaption>
+          <figcaption class="project-title">Portfolio Website</figcaption>
+        </figure>
+      </article>
+    </section>
+    <section class="container">
+      <form>
+        <div class="grid">
+          <h1>
+            Let's keep in touch
+          </h1>
+          <svg width="100" height="100" viewBox="0 0 231 232" fill="none" xmlns="http://www.w3.org/2000/svg"
+            class="grid-icon hoverable">
+            <a href="https://github.com">
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M231 0H0V231H137.5H137.73C142.148 229.459 201.262 168.538 231 137.5V0Z" fill="#B80F3C" />
+              <path
+                d="M125 149.333V136C125.464 131.824 124.266 127.634 121.667 124.333C131.667 124.333 141.667 117.667 141.667 106C141.933 101.833 140.767 97.7332 138.333 94.3332C139.267 90.4998 139.267 86.4998 138.333 82.6665C138.333 82.6665 135 82.6665 128.333 87.6665C119.533 85.9998 110.467 85.9998 101.667 87.6665C95 82.6665 91.6667 82.6665 91.6667 82.6665C90.6667 86.4998 90.6667 90.4998 91.6667 94.3332C89.2396 97.7194 88.0616 101.842 88.3334 106C88.3334 117.667 98.3334 124.333 108.333 124.333C107.033 125.967 106.067 127.833 105.5 129.833C104.933 131.833 104.767 133.933 105 136M105 136V149.333M105 136C89.9667 142.667 88.3334 129.333 81.6667 129.333"
+                stroke="#100612" stroke-width="6.66667" stroke-linecap="round" stroke-linejoin="round" />
+            </a>
+          </svg>
+          <svg width="138" height="100" viewBox="0 0 320 232" fill="none" xmlns="http://www.w3.org/2000/svg"
+            class="grid-icon hoverable">
+            <a href="https://linkedin.com">
+              <path d="M319.5 0H88.5V142.5L0 231H226H226.23C230.648 229.459 289.762 168.538 319.5 137.5V0Z"
+                fill="#B80F3C" />
+              <path
+                d="M213.333 102.667C218.638 102.667 223.725 104.774 227.475 108.524C231.226 112.275 233.333 117.362 233.333 122.667V146H220V122.667C220 120.898 219.298 119.203 218.047 117.952C216.797 116.702 215.101 116 213.333 116C211.565 116 209.87 116.702 208.619 117.952C207.369 119.203 206.667 120.898 206.667 122.667V146H193.333V122.667C193.333 117.362 195.44 112.275 199.191 108.524C202.942 104.774 208.029 102.667 213.333 102.667Z"
+                stroke="#100612" stroke-width="6.66667" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M180 106H166.667V146H180V106Z" stroke="#100612" stroke-width="6.66667" stroke-linecap="round"
+                stroke-linejoin="round" />
+              <path
+                d="M173.333 95.9998C177.015 95.9998 180 93.0151 180 89.3332C180 85.6513 177.015 82.6665 173.333 82.6665C169.651 82.6665 166.667 85.6513 166.667 89.3332C166.667 93.0151 169.651 95.9998 173.333 95.9998Z"
+                stroke="#100612" stroke-width="6.66667" stroke-linecap="round" stroke-linejoin="round" />
+            </a>
+          </svg>
+          <svg width="138" height="100" viewBox="0 0 320 232" fill="none" xmlns="http://www.w3.org/2000/svg"
+            class="grid-icon hoverable">
+            <a href="https://instagram.com">
+              <path d="M319.5 0H88.5V142.5L0 231H226H226.23C230.648 229.459 289.762 168.538 319.5 137.5V0Z"
+                fill="#B80F3C" />
+              <path
+                d="M218.333 97.6665H218.367M183.333 82.6665H216.667C225.871 82.6665 233.333 90.1284 233.333 99.3332V132.667C233.333 141.871 225.871 149.333 216.667 149.333H183.333C174.129 149.333 166.667 141.871 166.667 132.667V99.3332C166.667 90.1284 174.129 82.6665 183.333 82.6665ZM213.333 113.9C213.745 116.674 213.271 119.507 211.979 121.997C210.688 124.486 208.644 126.505 206.139 127.765C203.634 129.026 200.795 129.465 198.026 129.02C195.257 128.574 192.699 127.267 190.716 125.284C188.733 123.301 187.426 120.743 186.98 117.974C186.535 115.205 186.974 112.366 188.234 109.861C189.495 107.356 191.514 105.312 194.003 104.021C196.493 102.729 199.326 102.255 202.1 102.667C204.93 103.086 207.549 104.405 209.572 106.428C211.595 108.45 212.914 111.07 213.333 113.9Z"
+                stroke="#100612" stroke-width="6.66667" stroke-linecap="round" stroke-linejoin="round" />
+            </a>
+          </svg>
+          <select name="Topic" id="cars" autocomplete="off" class="hoverable" required
+            oninvalid="this.setCustomValidity('Please select a topic')" oninput="this.setCustomValidity('')">
+            <option disabled selected value="">Select a topic</option>
+            <option value="1">Project Collaboration</option>
+            <option value="2">Freelance/Consulting Inquiry</option>
+            <option value="3">Job/Internship Opportunities</option>
+            <option value="4">Technical Questions or Advice</option>
+          </select>
+          <textarea placeholder="Your message" autocomplete="off" class="hoverable" required
+            oninvalid="this.setCustomValidity('Please fill your message')"
+            oninput="this.setCustomValidity('')"></textarea>
+          <input type="email" placeholder="Your email" class="email hoverable" autocomplete="off" required>
+          <input type="submit" value="Submit" class="submit hoverable">
+        </div>
+      </form>
+    </section>
+    <footer>
+      Made with hate and tears by Aleksander Grzybek
+    </footer>
+  </main>
+  <script type="module" src="scripts/projects.js"></script>
+  <script type="module" src="scripts/planet.js"></script>
+  <script type="module" src="scripts/agh.js"></script>
+  <script type="module" src="scripts/animated-background.js"></script>
+</body>
+
+</html>
