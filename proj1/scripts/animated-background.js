@@ -19,10 +19,11 @@ addEventListener("mousemove", ({ clientX, clientY }) => {
 
 setInterval(generateCharacters, 30);
 
-function generateCharacters(length = 40000) {
+function generateCharacters(length = 24000) {
+  let l = Math.round(window.innerHeight * window.innerWidth * 0.00484);
   const characters =
     "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-  const resultArray = new Array(length);
+  const resultArray = new Array(l);
   for (let i = 0; i < length; i++) {
     resultArray[i] = characters.charAt(
       Math.floor(Math.random() * characters.length)

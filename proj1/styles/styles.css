@@ -296,7 +296,7 @@ main#projects {
 
 footer {
   text-align: right;
-  margin: 50px;
+  margin: 20px;
   color: #ecc4ce;
   z-index: 99999;
 }
@@ -362,7 +362,7 @@ footer {
 
 .grid {
   display: grid;
-  grid-template-columns: 3.1fr 5fr 5fr 14fr 10fr;
+  grid-template-columns: 3.1fr 5fr 5fr 14fr minmax(0,10fr);
   grid-template-rows: 5fr 3fr 400px 5fr;
   width: 80vw;
   max-width: 800px;
@@ -397,7 +397,7 @@ h1 {
 
 input {
   grid-row: 4;
-  font-size: 15px;
+  font-size: min(15px, 3vw);
 }
 
 .email {
@@ -411,6 +411,7 @@ input {
   padding-left: 20px;
   aspect-ratio: 7.66;
   box-sizing: border-box;
+  width: 100%;
   transform: scale(1.025);
   transform-origin: top left;
 }
@@ -430,7 +431,7 @@ input {
 }
 
 textarea {
-  font-size: 15px;
+  font-size: min(15px, 3vw);
   grid-row: 3;
   grid-column: 1 / span 5;
   border: 3px solid #b80f3c;
@@ -518,7 +519,7 @@ textarea {
 }
 
 select {
-  font-size: 15px;
+  font-size: min(15px, 3vw);
   border: 3px solid #b80f3c;
   padding: 20px;
   color: #ecc4ce;
@@ -544,7 +545,7 @@ select * {
   }
 }
 
-@media (pointer: coarse) {
+@media only screen and (hover: none) {
   .cursor {
     circle {
       fill: transparent;
