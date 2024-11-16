@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Lab 3</title>
+  <style>
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+      color: #f5f5f5;
+    }
+
+    form {
+      font-family: Arial, sans-serif;
+      background-color: #1f2335;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    div {
+      font-size: 100px;
+      color: #f5f5f5;
+    }
+
+    span {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      height: 50px;
+      width: 500px;
+    }
+
+    input {
+      color: #f5f5f5;
+      width: 80px;
+      height: 30px;
+      margin: 10px;
+      border: none;
+      font-size: 20px;
+      cursor: pointer;
+    }
+
+    input:hover {
+      border: 1px solid #f5f5f5;
+    }
+  </style>
+</head>
+
+<body>
+  <form>
+    <div>Generator haseł</div>
+    <span style="color: #ff007c">
+      Minimalna długość hasła:
+      <input type="number" id="min" style="background-color: #ff007c;" />
+    </span>
+    <span style="color: #ff9e64;">
+      Maksymalna długość hasła:
+      <input type="number" id="max" style="background-color: #ff9e64;" />
+    </span>
+    <span style="color: #4fd6be;">
+      Wielkie litery:
+      <input type="checkbox" id="upper" />
+    </span>
+    <span style="color: #7dcfff;">
+      Znaki specjalne:
+      <input type="checkbox" id="special" />
+    </span>
+    <input type="button" value="Generuj" onclick="generate()" style="background-color: #9d7cd8;" />
+  </form>
+  <script>
+    const upperChar = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    const specialChar = "!@#$%^&*()_+";
+    function generate() {
+      let min = parseInt(document.querySelector("#min").value);
+      let max = parseInt(document.querySelector("#max").value);
+      let upper = document.querySelector("#upper").checked;
+      let special = document.querySelector("#special").checked;
+      let characters = "abcdefghijklmnopqrstuvwxyz";
+
+      if (upper) {
+        characters += upperChar;
+      }
+
+      if (special) {
+        characters += specialChar;
+      }
+
+      let password = "";
+      let rand = Math.random();
+      let length = Math.floor(rand * (max - min + 1)) + min;
+      for (let i = 0; i < length; i++) {
+        password += characters.charAt(
+          Math.floor(Math.random() * characters.length)
+        );
+      }
+      alert(password);
+    }
+  </script>
+</body>
+
+</html>
