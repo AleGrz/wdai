@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Lab 3</title>
+    <style>
+        html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1f2335;
+            height: 100%;
+            color: #f5f5f5;
+        }
+
+        input,
+        select {
+            display: block;
+            background-color: #1f2335;
+            border: 2px solid;
+            height: 100px;
+            box-sizing: border-box;
+            margin: 20px;
+            border-radius: 30px;
+            color: #f5f5f5;
+            font-size: 30px;
+            padding: 20px;
+        }
+
+        input:focus {
+            outline: none;
+        }
+
+        input {
+            flex: 10;
+            border-color: #ff9e64;
+            color: #ff9e64;
+        }
+
+        select {
+            flex: 1;
+            border-color: #4fd6be;
+            color: #4fd6be;
+            ;
+        }
+
+        header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #1f2335;
+            padding: 20px;
+        }
+
+        #container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #container>div {
+            border: 2px solid #ff007c;
+            margin: 20px;
+            padding: 60px;
+            width: 600px;
+            height: 300px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: center;
+            text-align: justify;
+            position: relative;
+            border-radius: 30px;
+        }
+
+        img {
+            position: absolute;
+            z-index: -2;
+            height: 350px;
+            width: auto;
+        }
+
+        #container>div::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 30px;
+            z-index: -1;
+            background: linear-gradient(rgba(31, 35, 53, 0), rgba(31, 35, 53, 1) 80%);
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <input type="text" placeholder="Search" oninput="filter()">
+        <select onchange="sort()">
+            <option value="1">Default</option>
+            <option value="2">Ascending</option>
+            <option value="3">Descending</option>
+        </select>
+    </header>
+    <div id="container"></div>
+    <script>
+        fetch("https://dummyjson.com/products")
+            .then(response => response.json())
+            .then(data => process(data['products']));
+
+        const container = document.querySelector("#container");
+        const select = document.querySelector("select");
+        const input = document.querySelector("input");
+        var original;
+
+        function process(products) {
+            products.forEach(p => {
+                let n = document.createElement("div");
+                n.innerHTML = `<h1>${p.title}</h1><p>${p.description}</p><img src="${p.thumbnail}" />`;
+                container.appendChild(n);
+            });
+            original = Array.from(container.children);
+
+        }
+
+        function sort() {
+            let c;
+            if (select.value == 1) {
+                c = original;
+            } else {
+                c = Array.from(container.children);
+                c.sort((a, b) => {
+                    let aTitle = a.querySelector("h1").textContent;
+                    let bTitle = b.querySelector("h1").textContent;
+                    return aTitle.localeCompare(bTitle);
+                });
+                if (select.value == 3) {
+                    c.reverse();
+                }
+            }
+            while (container.children.length > 0) {
+                container.removeChild(container.children[0]);
+            }
+            c.forEach(function (el) {
+                container.appendChild(el);
+            });
+        }
+
+        function filter() {
+            c = Array.from(container.children);
+            let query = input.value.toLowerCase();
+            c.forEach(function (el) {
+                let title = el.querySelector("h1").textContent.toLowerCase();
+                if (title.includes(query)) {
+                    el.style.display = "flex";
+                } else {
+                    el.style.display = "none";
+                }
+            });
+        }
+    </script>
+</body>
+
+</html>
