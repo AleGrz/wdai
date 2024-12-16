@@ -1,0 +1,39 @@
+.container {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    margin: 1em 0;
+    width: 400px;
+}
+
+.name {
+    font-size: 1em;
+    font-weight: 600;
+    grid-row: 1;
+    grid-column: 1;
+}
+.nick {
+    color: grey;
+    font-size: 1em;
+    grid-row:2;
+}
+.body {
+    font-size: 1em;
+    grid-row: 3;
+}
+.likes {
+    font-size: 1em;
+    font-weight: 300;
+    grid-column: 2;
+    grid-row: 1 / span 4;
+}
+.likespan{
+    text-align: center;
+}
+
+.postId {
+    font-size: 0.7em;
+    grid-row: 4;
+    font-weight: 300;
+    align-self: center;
+}

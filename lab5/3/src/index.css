@@ -1,0 +1,134 @@
+:root {
+  font-family: system-ui, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(199, 221, 252, 0.87);
+  background: url(https://www.hdwallpapers.in/download/mountains_after_sunset_4k_8k-2560x1440.jpg) no-repeat center;
+  background-size: cover;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  max-width: 80%;
+}
+
+#root > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: left;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    translate: translateY(-0.5em);
+  }
+  to {
+    opacity: 1;
+    translate: translateY(0);
+  }
+}
+
+#root * {
+  animation: fadeIn 0.5s ease-out;
+  text-align: justify;
+}
+
+a {
+  font-weight: 500;
+  color: #AD575F;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #AC393C;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  place-content: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 3.2em;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #081826;
+  cursor: pointer;
+  transition: border-color 0.25s;
+  color: rgba(199, 221, 252, 0.87);
+}
+button:hover {
+  border-color: #591E3A;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+form {
+  width: 800px;
+}
+
+form > * {
+  margin: 0.5em 0;
+}
+
+button {
+  width: auto;
+  align-self: center;
+}
+
+textarea {
+  width: 100%;
+  height: 500px;
+  resize: none;
+  box-sizing: border-box;
+  padding: 1em;
+  background-color: #081826;
+  border: none;
+  border-radius: 8px;
+}
+ input {
+  box-sizing: border-box;
+  padding: 1em;
+  border: none;
+  background-color: #081826;
+  border-radius: 8px;
+ }
+
+ #root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px;
+  margin: 50px auto;
+  box-sizing: border-box;
+  border-radius: 8px;
+  background-color: rgba(175, 201, 238, 0.1);
+  box-shadow: 0 0 3px rgba(175, 201, 238, 1);
+  backdrop-filter: blur(10px);
+}
